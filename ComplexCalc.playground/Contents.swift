@@ -53,6 +53,45 @@ class Calculator {
       return op(lhs, rhs)
     }
 
+    // Array operations
+
+    func add(_ args: [Int]) -> Int {
+      var total = 0
+      for n in args {
+        total += n
+      }
+      return total
+    }
+
+    func multiply(_ args: [Int]) -> Int {
+      // IMPORTANT: multiplication identity is 1
+      // If the array is empty, you can decide what to return.
+      // (Your tests don't multiply an empty array.)
+      var product = 1
+      for n in args {
+        product *= n
+      }
+      return product
+    }
+
+    func count(_ args: [Int]) -> Int {
+      return args.count
+    }
+
+    func avg(_ args: [Int]) -> Int {
+      if args.isEmpty { return 0 }
+      return add(args) / args.count
+    }
+    
+    // Array higher-order function (reduce/fold)
+
+    func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+      var result = beg
+      for n in args {
+        result = op(result, n)
+      }
+      return result
+    }
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
