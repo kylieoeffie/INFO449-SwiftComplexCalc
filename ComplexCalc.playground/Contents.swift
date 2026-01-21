@@ -92,6 +92,21 @@ class Calculator {
       }
       return result
     }
+    
+    // Tuple points (Int, Int)
+
+    func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+      let (x1, y1) = lhs
+      let (x2, y2) = rhs
+      return (x1 + x2, y1 + y2)
+    }
+
+    func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+      let (x1, y1) = lhs
+      let (x2, y2) = rhs
+      return (x1 - x2, y1 - y2)
+    }
+
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
