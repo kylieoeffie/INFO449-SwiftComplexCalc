@@ -106,6 +106,21 @@ class Calculator {
       let (x2, y2) = rhs
       return (x1 - x2, y1 - y2)
     }
+    
+    // Dictionary points ["x": Int, "y": Int]
+
+    func add(lhs: [String:Int], rhs: [String:Int]) -> [String:Int] {
+      // Expect keys "x" and "y"
+      let x = (lhs["x"] ?? 0) + (rhs["x"] ?? 0)
+      let y = (lhs["y"] ?? 0) + (rhs["y"] ?? 0)
+      return ["x": x, "y": y]
+    }
+
+    func subtract(lhs: [String:Int], rhs: [String:Int]) -> [String:Int] {
+      let x = (lhs["x"] ?? 0) - (rhs["x"] ?? 0)
+      let y = (lhs["y"] ?? 0) - (rhs["y"] ?? 0)
+      return ["x": x, "y": y]
+    }
 
 }
 
